@@ -3,42 +3,46 @@ package models
 import (
 	"fmt"
 	"log"
+	"gopkg.in/mgo.v2"
+	"database/sql"
 
-	"gogin/pkg/setting"
+	"GoGin/pkg/setting"
 	"time"
 )
 
-var db *gorm.DB
+var db *sql.DB
+var Session *mgo.Session
 
 type Model struct {
-	ID         int `json:"id"`
-	CreatedOn  int `json:"created_on"`
-	ModifiedOn int `json:"modified_on"`
-	DeletedOn  int `json:"deleted_on"`
+	CreatedOn  int `json:"createdOn" bson:"createdOn"`
+	ModifiedOn int `json:"modified_on" bson:"modifiedOn"`
+	DeletedOn  int `json:"deleted_on" bson:"deletedOn"`
 }
 
 func Setup() {
 	var err error
-	db, err = gorm.Open(setting.DatabaseSetting.Type, fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8&parseTime=True&loc=Local",
-		setting.DatabaseSetting.User,
-		setting.DatabaseSetting.Password,
-		setting.DatabaseSetting.Host,
-		setting.DatabaseSetting.Name))
 
-	if err != nil {
-		log.Fatalf("models.Setup err: %v", err)
-	}
+	log.Println("Initializing MongoDB connection...")
 
-	gorm.DefaultTableNameHandler = func(db *gorm.DB, defaultTableName string) string {
-		return setting.DatabaseSetting.TablePrefix + defaultTableName
-	}
+    defer func() {
+        if r := recover(); r != nil {
+            log.Fatalf("Mongo panic detected: %v", err)
+            var ok bool
+            err, ok := r.(error)
+            if !ok {
+                fmt.Printf("pkg:  %v,  error: %s", r, err)
+            }
+        }
+    }()
 
-	db.SingularTable(true)
-	db.Callback().Create().Replace("gorm:update_time_stamp", updateTimeStampForCreateCallback)
-	db.Callback().Update().Replace("gorm:update_time_stamp", updateTimeStampForUpdateCallback)
-	db.Callback().Delete().Replace("gorm:delete", deleteCallback)
-	db.DB().SetMaxIdleConns(10)
-	db.DB().SetMaxOpenConns(100)
+	Session,err = mgo.DialWithTimeout(setting.MongoSetting.Host, 60 * time.Second)
+	Session.SetSocketTimeout(60 * time.Second)
+    if err!=nil{
+		log.Println("MongoDB Init Error: %v", err)
+        // panic(err)
+    }
+    log.Println("Successfully connected to MongoDB")
+    Session.SetMode(mgo.Monotonic, true)
 }
 
 func CloseDB() {

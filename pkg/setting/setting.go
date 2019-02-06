@@ -39,6 +39,7 @@ type Server struct {
 
 var ServerSetting = &Server{}
 
+//! put your relational database connection info here
 type Database struct {
 	Type        string
 	User        string
@@ -49,6 +50,16 @@ type Database struct {
 }
 
 var DatabaseSetting = &Database{}
+
+//! put your mongodb connection info here
+type Mongo struct {
+	Host		string
+	Port   		int
+	User        string
+	Password    string
+	Timeout     time.Duration
+}
+var MongoSetting = &Mongo{}
 
 type Redis struct {
 	Host        string
@@ -72,12 +83,14 @@ func Setup() {
 	mapTo("app", AppSetting)
 	mapTo("server", ServerSetting)
 	mapTo("database", DatabaseSetting)
+	mapTo("mongo", MongoSetting)
 	mapTo("redis", RedisSetting)
 
 	AppSetting.ImageMaxSize = AppSetting.ImageMaxSize * 1024 * 1024
 	ServerSetting.ReadTimeout = ServerSetting.ReadTimeout * time.Second
 	ServerSetting.WriteTimeout = ServerSetting.ReadTimeout * time.Second
 	RedisSetting.IdleTimeout = RedisSetting.IdleTimeout * time.Second
+	MongoSetting.Timeout = MongoSetting.Timeout * 120 * time.Second
 }
 
 func mapTo(section string, v interface{}) {

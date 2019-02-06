@@ -5,7 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/astaxie/beego/validation"
 
-	"gogin/pkg/e"
+	"GoGin/pkg/e"
 )
 
 func BindAndValid(c *gin.Context, form interface{}) (int, int) {

@@ -1,23 +1,9 @@
 package main
 
 import (
-	"fmt"
-	"log"
-	"net/http"
-
-	"gogin/pkg/setting"
-	"gogin/routers"
-	"gogin/models"
-	"gogin/pkg/logging"
-	"gogin/pkg/gredis"
+	"GoGin/cmd"
 )
 
-func init() {
-	setting.Setup()
-	models.Setup()
-	logging.Setup()
-	gredis.Setup()
-}
 
 // @title Gogin API
 // @version 1.0
@@ -26,23 +12,8 @@ func init() {
 // @license.name MIT
 // @license.url https://github.com/xxphenomxx/gogin/blob/master/LICENSE
 func main() {
-	routersInit := routers.InitRouter()
-	readTimeout := setting.ServerSetting.ReadTimeout
-	writeTimeout := setting.ServerSetting.WriteTimeout
-	endPoint := fmt.Sprintf(":%d", setting.ServerSetting.HttpPort)
-	maxHeaderBytes := 1 << 20
 
-	server := &http.Server{
-		Addr:           endPoint,
-		Handler:        routersInit,
-		ReadTimeout:    readTimeout,
-		WriteTimeout:   writeTimeout,
-		MaxHeaderBytes: maxHeaderBytes,
-	}
-
-	log.Printf("[info] start http server listening %s", endPoint)
-
-	server.ListenAndServe()
+	cmd.Execute()
 
 	// If you want Graceful Restart, you need a Unix system and download github.com/fvbock/endless
 	//endless.DefaultReadTimeOut = readTimeout
