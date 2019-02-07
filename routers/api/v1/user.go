@@ -18,7 +18,7 @@ import (
 // @Tags user
 // @Success 200 {object} app.Response
 // @Failure 500 {object} app.Response
-// @Router /user/all" [get]
+// @Router /api/v1/users/all" [get]
 func GetUsers(c *gin.Context) {
 	appG := app.Gin{C: c}
 	data := make(map[string]interface{})

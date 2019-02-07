@@ -39,7 +39,7 @@ func InitRouter() *gin.Engine {
 	apiv1.Use(jwt.JWT())
 	{
 		// user routes
-		apiv1.GET("/users", v1.GetUsers)
+		apiv1.GET("/users/all", v1.GetUsers)
 
 
 	}
