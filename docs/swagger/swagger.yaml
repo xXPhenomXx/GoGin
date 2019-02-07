@@ -42,25 +42,6 @@ paths:
             $ref: '#/definitions/app.Response'
             type: object
       summary: Import Image
-  /user/all:
-    get:
-      description: Returns an array of all User objects
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/app.Response'
-            type: object
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/app.Response'
-            type: object
-      summary: Get users
-      tags:
-      - user
   /user/email/{email}:
     get:
       description: Queries for a single User object by the email address provided
@@ -136,6 +117,25 @@ paths:
             $ref: '#/definitions/app.Response'
             type: object
       summary: Get or Create a User object - returns a User object and JWT token
+      tags:
+      - user
+  /users/all:
+    get:
+      description: Returns an array of all User objects
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/app.Response'
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/app.Response'
+            type: object
+      summary: Get users
       tags:
       - user
 swagger: "2.0"
