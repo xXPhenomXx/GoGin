@@ -47,7 +47,7 @@
                 }
             }
         },
-        "/user/all": {
+        "/api/v1/users/all": {
             "get": {
                 "description": "Returns an array of all User objects",
                 "produces": [
@@ -57,115 +57,6 @@
                     "user"
                 ],
                 "summary": "Get users",
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "object",
-                            "$ref": "#/definitions/app.Response"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "schema": {
-                            "type": "object",
-                            "$ref": "#/definitions/app.Response"
-                        }
-                    }
-                }
-            }
-        },
-        "/user/email/{email}": {
-            "get": {
-                "description": "Queries for a single User object by the email address provided otherwise will return an error",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "user"
-                ],
-                "summary": "Fetch a user record by email address",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "Email",
-                        "name": "email",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "object",
-                            "$ref": "#/definitions/app.Response"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "schema": {
-                            "type": "object",
-                            "$ref": "#/definitions/app.Response"
-                        }
-                    }
-                }
-            }
-        },
-        "/user/get-or-create": {
-            "post": {
-                "description": "Queries for a single User object by the email address provided, if it cannot locate one then it will create a new User record and return it",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "user"
-                ],
-                "summary": "Get or Create a User object - returns a User object and JWT token",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "Email",
-                        "name": "email",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "type": "string",
-                        "description": "Google ID",
-                        "name": "gID",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "type": "string",
-                        "description": "Image URL",
-                        "name": "image",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "type": "string",
-                        "description": "Users full name",
-                        "name": "full",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "type": "string",
-                        "description": "First name",
-                        "name": "fn",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "type": "string",
-                        "description": "Last name",
-                        "name": "ln",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
                 "responses": {
                     "200": {
                         "description": "OK",

@@ -42,7 +42,7 @@ paths:
             $ref: '#/definitions/app.Response'
             type: object
       summary: Import Image
-  /user/all:
+  /api/v1/users/all:
     get:
       description: Returns an array of all User objects
       produces:
@@ -59,83 +59,6 @@ paths:
             $ref: '#/definitions/app.Response'
             type: object
       summary: Get users
-      tags:
-      - user
-  /user/email/{email}:
-    get:
-      description: Queries for a single User object by the email address provided
-        otherwise will return an error
-      parameters:
-      - description: Email
-        in: path
-        name: email
-        required: true
-        type: string
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/app.Response'
-            type: object
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/app.Response'
-            type: object
-      summary: Fetch a user record by email address
-      tags:
-      - user
-  /user/get-or-create:
-    post:
-      description: Queries for a single User object by the email address provided,
-        if it cannot locate one then it will create a new User record and return it
-      parameters:
-      - description: Email
-        in: path
-        name: email
-        required: true
-        type: string
-      - description: Google ID
-        in: path
-        name: gID
-        required: true
-        type: string
-      - description: Image URL
-        in: path
-        name: image
-        required: true
-        type: string
-      - description: Users full name
-        in: path
-        name: full
-        required: true
-        type: string
-      - description: First name
-        in: path
-        name: fn
-        required: true
-        type: string
-      - description: Last name
-        in: path
-        name: ln
-        required: true
-        type: string
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/app.Response'
-            type: object
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/app.Response'
-            type: object
-      summary: Get or Create a User object - returns a User object and JWT token
       tags:
       - user
 swagger: "2.0"

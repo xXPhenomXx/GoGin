@@ -38,19 +38,6 @@ func GetUsers(c *gin.Context) {
 }
 
 
-// @Summary Get or Create a User object - returns a User object and JWT token
-// @Description Queries for a single User object by the email address provided, if it cannot locate one then it will create a new User record and return it
-// @Produce  json
-// @Param email path string true "Email"
-// @Param gID path string true "Google ID"
-// @Param image path string true "Image URL"
-// @Param full path string true "Users full name"
-// @Param fn path string true "First name"
-// @Param ln path string true "Last name"
-// @Tags user
-// @Success 200 {object} app.Response
-// @Failure 500 {object} app.Response
-// @Router /user/get-or-create" [post]
 func GetOrCreateUser(c *gin.Context) {
 	appG := app.Gin{C: c}
 	data := make(map[string]interface{})
@@ -78,14 +65,6 @@ func GetOrCreateUser(c *gin.Context) {
 
 }
 
-// @Summary Fetch a user record by email address
-// @Description Queries for a single User object by the email address provided otherwise will return an error
-// @Produce  json
-// @Tags user
-// @Param email path string true "Email"
-// @Success 200 {object} app.Response
-// @Failure 500 {object} app.Response
-// @Router /user/email/{email} [get]
 func GetUserByEmail(c *gin.Context) {
 
 	appG := app.Gin{C: c}
