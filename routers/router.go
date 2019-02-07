@@ -15,7 +15,7 @@ import (
 	"github.com/xxphenomxx/GoGin/pkg/setting"
 	"github.com/xxphenomxx/GoGin/pkg/upload"
 	"github.com/xxphenomxx/GoGin/routers/api"
-	//"github.com/xxphenomxx/GoGin/routers/api/v1"
+	"github.com/xxphenomxx/GoGin/routers/api/v1"
 )
 
 func InitRouter() *gin.Engine {
