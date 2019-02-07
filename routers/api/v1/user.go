@@ -5,11 +5,10 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"GoGin/pkg/app"
-	"GoGin/pkg/e"
-	"GoGin/pkg/util"
-	//"GoGin/pkg/logging"
-	"GoGin/services/user_service"
+	"github.com/xxphenomxx/GoGin/pkg/app"
+	"github.com/xxphenomxx/GoGin/pkg/e"
+	"github.com/xxphenomxx/GoGin/pkg/util"
+	"github.com/xxphenomxx/GoGin/services/user_service"
 )
 
 // GetUsers godoc
