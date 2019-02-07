@@ -1,0 +1,47 @@
+package: GoGin
+import:
+- package: github.com/Unknwon/com
+  version: ~2.0.0
+- package: github.com/alecthomas/template
+- package: github.com/astaxie/beego
+  version: ~1.11.1
+  subpackages:
+  - validation
+- package: github.com/dgrijalva/jwt-go
+  version: ~3.2.0
+- package: github.com/gin-gonic/gin
+  version: ~1.3.0
+- package: github.com/go-ini/ini
+  version: ~1.41.0
+- package: github.com/gomodule/redigo
+  version: ~2.0.0
+  subpackages:
+  - redis
+- package: github.com/swaggo/gin-swagger
+  version: ~1.0.0
+  subpackages:
+  - swaggerFiles
+- package: github.com/swaggo/swag
+  version: ~1.4.0
+- package: github.com/xxphenomxx/GoGin
+  subpackages:
+  - docs
+  - middleware/cors
+  - middleware/jwt
+  - models
+  - pkg/app
+  - pkg/e
+  - pkg/export
+  - pkg/file
+  - pkg/gredis
+  - pkg/logging
+  - pkg/setting
+  - pkg/upload
+  - pkg/util
+  - routers
+  - routers/api
+  - routers/api/v1
+  - services/user_service
+- package: gopkg.in/mgo.v2
+  subpackages:
+  - bson
