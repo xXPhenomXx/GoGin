@@ -5,11 +5,11 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/xxphenomxx/GoGin/pkg/setting"
-	"github.com/xxphenomxx/GoGin/routers"
-	"github.com/xxphenomxx/GoGin/models"
-	"github.com/xxphenomxx/GoGin/pkg/logging"
-	"github.com/xxphenomxx/GoGin/pkg/gredis"
+	"GoGin/pkg/setting"
+	"GoGin/routers"
+	"GoGin/models"
+	"GoGin/pkg/logging"
+	"GoGin/pkg/gredis"
 )
 
 func init() {

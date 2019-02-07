@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/xxphenomxx/GoGin/pkg/setting"
+	"GoGin/pkg/setting"
 )
 
 func getLogFilePath() string {

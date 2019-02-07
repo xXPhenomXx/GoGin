@@ -6,7 +6,7 @@ import (
 	"gopkg.in/mgo.v2"
 	"database/sql"
 
-	"github.com/xxphenomxx/GoGin/pkg/setting"
+	"GoGin/pkg/setting"
 	"time"
 )
 
@@ -41,7 +41,7 @@ func Setup() {
 		log.Println("MongoDB Init Error: %v", err)
         // panic(err)
     }
-    log.Println("Successfully connected to MongoDB")
+    log.Println("Successfully connected to MongoDB - ", setting.MongoSetting.Host)
     Session.SetMode(mgo.Monotonic, true)
 }
 
