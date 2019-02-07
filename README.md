@@ -72,7 +72,8 @@ Actual pid is 4393
 ```
 Swagger doc
 
-Browse to: 127.0.0.1:9000/swagger/index.html
+Browse to: `127.0.0.1:9000/swagger/index.html`
+
 ![image](https://i.imgur.com/nip4Xhr.png)
 
 ## Features
