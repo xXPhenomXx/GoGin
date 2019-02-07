@@ -3,8 +3,6 @@
 GoGin is a Golang & Gin API starter template with some built in niceities to help you hit the ground running.
 Swagger is built for robust API documentation and testing.
 
-[简体中文](https://github.com/xxphenomxx/GoGin/blob/master/README_ZH.md)
-
 ## Installation
 ```
 $ go get github.com/xxphenomxx/GoGin
