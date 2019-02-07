@@ -41,6 +41,8 @@ IdleTimeout = 200
 ```
 $ cd $GOPATH/src/GoGin
 
+$ glide install
+
 $ go run main.go 
 ```
 
