@@ -8,10 +8,10 @@ import (
 	"path"
 	"strings"
 
-	"GoGin/pkg/file"
-	"GoGin/pkg/logging"
-	"GoGin/pkg/setting"
-	"GoGin/pkg/util"
+	"github.com/xxphenomxx/GoGin/pkg/file"
+	"github.com/xxphenomxx/GoGin/pkg/logging"
+	"github.com/xxphenomxx/GoGin/pkg/setting"
+	"github.com/xxphenomxx/GoGin/pkg/util"
 )
 
 func GetImageFullUrl(name string) string {

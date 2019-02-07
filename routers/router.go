@@ -5,17 +5,17 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	_ "GoGin/docs"
+	_ "github.com/xxphenomxx/GoGin/docs"
 	"github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 
-	"GoGin/middleware/jwt"
-	"GoGin/middleware/cors"
-	"GoGin/pkg/export"
-	"GoGin/pkg/setting"
-	"GoGin/pkg/upload"
-	"GoGin/routers/api"
-	"GoGin/routers/api/v1"
+	"github.com/xxphenomxx/GoGin/middleware/jwt"
+	"github.com/xxphenomxx/GoGin/middleware/cors"
+	"github.com/xxphenomxx/GoGin/pkg/export"
+	"github.com/xxphenomxx/GoGin/pkg/setting"
+	"github.com/xxphenomxx/GoGin/pkg/upload"
+	"github.com/xxphenomxx/GoGin/routers/api"
+	"github.com/xxphenomxx/GoGin/routers/api/v1"
 )
 
 func InitRouter() *gin.Engine {

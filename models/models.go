@@ -6,7 +6,7 @@ import (
 	"gopkg.in/mgo.v2"
 	"database/sql"
 
-	"GoGin/pkg/setting"
+	"github.com/xxphenomxx/GoGin/pkg/setting"
 	"time"
 )
 

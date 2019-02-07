@@ -1,6 +1,6 @@
 package export
 
-import "GoGin/pkg/setting"
+import "github.com/xxphenomxx/GoGin/pkg/setting"
 
 const EXT = ".xlsx"
 

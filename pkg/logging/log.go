@@ -2,7 +2,7 @@ package logging
 
 import (
 	"fmt"
-	"GoGin/pkg/file"
+	"github.com/xxphenomxx/GoGin/pkg/file"
 	"log"
 	"os"
 	"path/filepath"
@@ -34,6 +34,7 @@ func Setup() {
 	var err error
 	filePath := getLogFilePath()
 	fileName := getLogFileName()
+
 	F, err = file.MustOpen(fileName, filePath)
 	if err != nil {
 		log.Fatalf("logging.Setup err: %v", err)

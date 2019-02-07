@@ -71,6 +71,15 @@ type Redis struct {
 
 var RedisSetting = &Redis{}
 
+type ODBC struct {
+	Host		string
+	User 		string
+	Password 	string
+	DSN 		string
+}
+
+var ODBCSetting = &ODBC{}
+
 var cfg *ini.File
 
 func Setup() {
@@ -85,6 +94,7 @@ func Setup() {
 	mapTo("database", DatabaseSetting)
 	mapTo("mongo", MongoSetting)
 	mapTo("redis", RedisSetting)
+	mapTo("odbc", ODBCSetting)
 
 	AppSetting.ImageMaxSize = AppSetting.ImageMaxSize * 1024 * 1024
 	ServerSetting.ReadTimeout = ServerSetting.ReadTimeout * time.Second

@@ -2,7 +2,7 @@ package userservice
 
 import (
 	"github.com/gin-gonic/gin"
-	"GoGin/models"
+	"github.com/xxphenomxx/GoGin/models"
 )
 
 // GetByEmail func queries for and returns a single user object by email address

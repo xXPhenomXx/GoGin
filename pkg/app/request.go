@@ -3,7 +3,7 @@ package app
 import (
 	"github.com/astaxie/beego/validation"
 
-	"GoGin/pkg/logging"
+	"github.com/xxphenomxx/GoGin/pkg/logging"
 )
 
 func MarkErrors(errors []*validation.Error) {

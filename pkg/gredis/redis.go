@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/gomodule/redigo/redis"
-	"GoGin/pkg/setting"
+	"github.com/xxphenomxx/GoGin/pkg/setting"
 )
 
 var RedisConn *redis.Pool

@@ -3,7 +3,7 @@ package app
 import (
 	"github.com/gin-gonic/gin"
 
-	"GoGin/pkg/e"
+	"github.com/xxphenomxx/GoGin/pkg/e"
 )
 
 type Gin struct {

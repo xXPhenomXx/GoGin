@@ -5,10 +5,10 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"GoGin/pkg/app"
-	"GoGin/pkg/e"
-	"GoGin/pkg/logging"
-	"GoGin/pkg/upload"
+	"github.com/xxphenomxx/GoGin/pkg/app"
+	"github.com/xxphenomxx/GoGin/pkg/e"
+	"github.com/xxphenomxx/GoGin/pkg/logging"
+	"github.com/xxphenomxx/GoGin/pkg/upload"
 )
 
 // @Summary Import Image
